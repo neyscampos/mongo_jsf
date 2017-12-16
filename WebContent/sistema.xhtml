@@ -8,9 +8,8 @@
 
 <h:head>
 </h:head>
+
 <h:body>
-
-
 	<p:panel header="Gravar Pessoa">
 		<h:form id="form1">
 			<p:panelGrid columns="2">
@@ -27,16 +26,37 @@
 				<h:outputText value="Idade"></h:outputText>
 				<p:inputText value="#{mb.pessoa.idade}" required="true" />
 
-				<p:commandButton value="Gravar os Dados" action="#{mb.}"
-					update=":form1" ajax="true">
+				<p:commandButton value="Gravar os Dados" action="#{mb.gravar}"
+					update=":form1, :form2" ajax="true">
 				</p:commandButton>
 			</p:panelGrid>
-			
+
 			<p:messages></p:messages>
 		</h:form>
 	</p:panel>
 
+	<p:panel header="Consulta Pessoa">
+		<h:form id="form2">
+			<p:dataTable value="#{mb.pessoas}" var="linha" paginator="true" rows="10">
+				<p:column headerText="IdPessoa">
+					<h:outputText value="#{linha.id}" />
+				</p:column>
+				
+				<p:column headerText="Nome" filterBy="#{linha.nome}">
+					<h:outputText value="#{linha.nome}" />
+				</p:column>				
 
+				<p:column headerText="Email">
+					<h:outputText value="#{linha.email}" />
+				</p:column>
+				
+				<p:column headerText="Idade">
+					<h:outputText value="#{linha.idade}" />
+				</p:column>				
+			</p:dataTable>
+		</h:form>
 
+	</p:panel>
 
 </h:body>
+</html>
