@@ -29,11 +29,11 @@ public class PessoaDao extends Dao {
 		tabela = con.getCollection("pessoa");
 		rs = tabela.find(stmt);
 		List<Pessoa> lista = new ArrayList<Pessoa>();
-		
+
 		while (rs.hasNext()) {
 			DBObject registro = rs.next();
-			lista.add(new Pessoa((Double)registro.get("id"), (String)registro.get("nome"),
-					(String)registro.get("email"), (Double)registro.get("idade")));
+			lista.add(new Pessoa((Double) registro.get("id"), (String) registro.get("nome"),
+					(String) registro.get("email"), (Double) registro.get("idade")));
 		}
 		return lista;
 	}
