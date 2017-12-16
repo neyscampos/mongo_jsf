@@ -26,7 +26,7 @@ while(consulta.hasNext()){
 
 db.pessoa.find().sort({nome : 1}).pretty();
 
-
+	
 db.pessoa.find({nome : /^n/}).pretty(); -- busca no início a letra
 db.pessoa.find({nome : /n$/}).pretty(); -- busca no fim a letra
 
