@@ -24,6 +24,11 @@ public class BeanManager implements Serializable {
 	}
 
 	public List<Pessoa> getPessoas() {
+		try {
+			pessoas = new PessoaDao().findAll();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 		return pessoas;
 	}
 

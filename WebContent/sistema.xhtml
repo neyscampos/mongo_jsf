@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+</h:head>
+<h:body>
+
+
+	<p:panel header="Gravar Pessoa">
+		<h:form id="form1">
+			<p:panelGrid columns="2">
+
+				<h:outputText value="Id"></h:outputText>
+				<p:inputText value="#{mb.pessoa.id}" required="true" />
+
+				<h:outputText value="Nome"></h:outputText>
+				<p:inputText value="#{mb.pessoa.nome}" required="true" />
+
+				<h:outputText value="Email"></h:outputText>
+				<p:inputText value="#{mb.pessoa.email}" required="true" />
+
+				<h:outputText value="Idade"></h:outputText>
+				<p:inputText value="#{mb.pessoa.idade}" required="true" />
+
+				<p:commandButton value="Gravar os Dados" action="#{mb.}"
+					update=":form1" ajax="true">
+				</p:commandButton>
+			</p:panelGrid>
+			
+			<p:messages></p:messages>
+		</h:form>
+	</p:panel>
+
+
+
+
+</h:body>
